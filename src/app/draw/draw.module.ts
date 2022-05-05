@@ -1,18 +1,22 @@
-import { IonicModule } from '@ionic/angular';
-import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+
+import { IonicModule } from '@ionic/angular';
+
+import { DrawPageRoutingModule } from './draw-routing.module';
+
 import { DrawPage } from './draw.page';
 
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
-    IonicModule,
     CommonModule,
     FormsModule,
-    
-    RouterModule.forChild([{ path: '', component: DrawPage }])
+    IonicModule,
+    DrawPageRoutingModule,
+    HttpClientModule
   ],
   declarations: [DrawPage]
 })
