@@ -15,7 +15,7 @@ import { ToastController } from '@ionic/angular';
 export class HomePage implements OnInit {
   wsdcData:any;
 
-  constructor(private http: HttpClient, private storage: Storage,private router: Router,public toastController: ToastController) { }
+  constructor(private http: HttpClient,private storage: Storage,private router: Router,public toastController: ToastController) { }
 
   ionViewDidEnter(){ //runs when the page has fully entered and is now the active page.
     SplashScreen.hide()
