@@ -11,7 +11,6 @@ def capacitor_pods
   pod 'CapacitorCordova', :path => '../../node_modules/@capacitor/ios'
   pod 'CapacitorCommunityGoogleMaps', :path => '../../node_modules/@capacitor-community/google-maps'
   pod 'CapacitorBrowser', :path => '../../node_modules/@capacitor/browser'
-  pod 'CapacitorFilesystem', :path => '../../node_modules/@capacitor/filesystem'
   pod 'CapacitorGeolocation', :path => '../../node_modules/@capacitor/geolocation'
   pod 'CapacitorSplashScreen', :path => '../../node_modules/@capacitor/splash-screen'
 end
