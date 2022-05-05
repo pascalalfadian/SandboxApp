@@ -8,11 +8,14 @@
 </ion-header>
 
 <ion-content>
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  
+  <ion-grid>
+    <ion-row>
+      <ion-list no-lines>
+        <ion-button color="white" id="{{wsdcVenue.id}}" *ngFor="let wsdcVenue of venuesData" (click)="itemTapped(wsdcVenue)">
+          <ion-icon name={{wsdcVenue.icon}}></ion-icon>
+          <span>{{ wsdcVenue.name }}</span>
+        </ion-button>
+      </ion-list>
+    </ion-row>
+  </ion-grid>
 </ion-content>
