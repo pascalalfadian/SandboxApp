@@ -8,11 +8,34 @@
 </ion-header>
 
 <ion-content>
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  
+  <div id="schedulesContainer">
+    <div id="schedulesSegments" slot="fixed">
+      <ion-segment #segmentContainer scrollable [(ngModel)]="selectedSegmentIdx"  (ionChange)="onSegmentChanged($event)"> 
+        <ion-segment-button *ngFor="let schedule of schedules; let i = index;" [value]="i" [id]="i">
+          <ion-label>
+            <div class="day">{{ getDayName(schedule.date)}}</div>
+            <div class="date">{{ getDate(schedule.date) }}</div>
+          </ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+    <div id="schedulesSlides">
+      <ion-slides #scheduleSlider [options]="slideOpts" (ionSlideDidChange)="onSlideChanged()">
+        <ion-slide *ngFor="let schedule of schedules;">
+          <ion-list>
+            <ion-item *ngFor="let agenda of schedule.agenda;" >
+              <ion-note item-start>
+                  {{agenda.start}} <br> 
+                  {{agenda.end}}
+              </ion-note>
+              <ion-label class="ion-text-wrap">
+                <h3>{{agenda.title}}</h3>
+                <p>{{agenda.subtitle}}</p>
+              </ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-slide>
+      </ion-slides>
+    </div>
+  </div>
 </ion-content>

@@ -1,19 +1,23 @@
-import { IonicModule } from '@ionic/angular';
-import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+
+import { IonicModule } from '@ionic/angular';
+
+import { SchedulePageRoutingModule } from './schedule-routing.module';
+
 import { SchedulePage } from './schedule.page';
 
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
-    IonicModule,
     CommonModule,
     FormsModule,
-    
-    RouterModule.forChild([{ path: '', component: SchedulePage }])
+    IonicModule,
+    SchedulePageRoutingModule,
+    HttpClientModule
   ],
   declarations: [SchedulePage]
 })
-export class SchedulePageModule {}
+export class SchedulePageModule { }
